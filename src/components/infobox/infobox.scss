@@ -1,0 +1,38 @@
+infobox {
+  display: block;
+  overflow: hidden;
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+
+  &.dark {
+    background: color($colors, dark);
+    color: #fff;
+  }
+
+  .title {
+    font-size: em(20);
+    line-height: 1.2;
+    margin-bottom: rem(13);
+  }
+
+  @each $h in h1, h2, h3, h4, h5, h6 {
+    #{$h}:not(.title) {
+      font-size: em(20);
+      line-height: 1.2;
+      margin: rem(13) 0;
+    }
+  }
+
+  p,
+  ul,
+  ol {
+    font-size: em(13);
+    line-height: (27/13);
+  }
+
+  ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+  }
+}
